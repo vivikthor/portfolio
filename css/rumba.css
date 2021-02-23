@@ -1,0 +1,573 @@
+@charset "utf-8";
+/* CSS ordenado en orden jerárquico de mayor a menor */
+/*--///////////////// SEPARADOR ///////////////////--*/
+/*--///////////////// /SEPARADOR ///////////////////--*/
+
+
+
+/*--///////////////// FUENTES ///////////////////--
+font-family: 'Abril Fatface', cursive;
+font-family: 'Archivo', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace;
+--///////////////// /FUENTES ///////////////////--*/
+
+:root {
+    font-size: 1.5rem;
+    --negro: rgb(17, 17, 17);
+    --roto: rgb(194, 194, 194);
+    --ruido-blanco: url(../imgs/ruido-blanco-17.gif);
+    --ruido-negro: url(../imgs/ruido-negro-7.gif);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'PT Sans', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-image: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+section {
+    background-image: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+::selection {
+    background-color: #9faeff;
+}
+
+
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(-180deg);
+    }
+}
+
+
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+hr {
+    margin: 10vh 0;
+    border-color: var(--roto);
+    width: 500px;
+}
+
+
+/* -------  RRSS UL  ------- */
+ul.rrss {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+ul.rrss li {
+    list-style: none;
+    transition: all .2s ease;
+}
+
+ul.rrss li:hover {
+    transform: scale(1.3) rotate(-5deg) translateY(-5px);
+    filter: brightness(1.3);
+}
+
+ul.rrss li:hover i {
+    transition: .3s;
+}
+
+
+ul.rrss li:hover i.fa-bullseye {
+    color: #f26f61;
+}
+
+ul.rrss li:hover i.fa-instagram {
+    color: #fa3470;
+}
+
+ul.rrss li:hover i.fa-twitch {
+    color: #9147ff;
+}
+
+ul.rrss li:hover i.fa-spotify {
+    color: #1ed760;
+}
+
+ul.rrss li:hover i.fa-linkedin-in {
+    color: #0077b5;
+}
+
+
+ul.rrss li a {
+    margin: 0 10px;
+    display: block;
+    color: var(--negro);
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
+ul.rrss li a i {
+    display: block;
+}
+
+/* -------  /RRSS UL  ------- */
+
+
+
+/* ------------------- HEADER  ---------------------- */
+
+
+header {
+    width: 100%;
+    height: 200vh;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+
+header article {
+    width: 700px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--negro);
+    display: grid;
+    transform: translateY(-50vh);
+    grid-template-rows: 6rem 2rem 1rem;
+    position: fixed;
+    z-index: 1;
+}
+
+header article h2 {
+    font-weight: 400;
+    position: relative;
+}
+
+
+header article p a {
+    cursor: help;
+    color: var(--negro);
+    text-decoration: none;
+    position: relative;
+    z-index: 4;
+}
+
+
+header article p {
+    transition: all ease 0.3s;
+    font-size: 1.8rem;
+}
+
+header article p:nth-of-type(2) {
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+
+
+/* EL ASTERISCO BONITO */
+header article a span {
+    font-family: 'Abril Fat', serifs;
+    font-weight: 800;
+}
+
+/* VICTOR */
+#nombre {
+    transition: all 0.6s ease;
+}
+
+#nombre span {
+    letter-spacing: -0.65rem;
+}
+
+#nombre span:nth-of-type(2) {
+    letter-spacing: 0.2rem;
+}
+
+
+
+
+/* EL NOMBRE IMG*/
+header img {
+    pointer-events: none;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: sticky;
+    width: 18rem;
+    height: 9rem;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    mix-blend-mode: multiply;
+}
+
+
+
+/* PILOTAK*/
+
+header .pilota {
+    top: 50vh !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%);
+    mix-blend-mode: color;
+}
+
+
+
+
+
+
+
+
+/* EL SOL*/
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    overflow: hidden;
+
+    z-index: 90;
+}
+
+img#solete {
+    cursor: pointer;
+    position: fixed;
+    left: 50%;
+    bottom: -2.4rem;
+    transform: translate(-50%, 0);
+    z-index: 40;
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+    transition: 0.2s ease;
+}
+
+img#solete.activo {
+    transform: translate(-50%, -4rem);
+}
+
+img#solete.escondido {
+    transform: translate(-50%, 4rem);
+}
+
+nav .navmenu {
+    position: fixed;
+    z-index: 39;
+    left: 50%;
+    bottom: -60vh;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    height: 0rem;
+    width: 0rem;
+    background: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    transition: all 0.3s ease;
+    opacity: 0.94;
+    overflow: hidden;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50vh auto;
+    grid-template-areas:
+        "contacto . nav"
+        "contacto . nav";
+}
+
+.navmenu ul.contacto {
+    grid-area: contacto;
+    justify-self: stretch;
+    align-self: end;
+}
+
+nav .navmenu + * {
+    visibility: hidden;
+    transition: all .2s ease, visibility .1s;
+    transition-delay:all 0, visibility .2s;
+    position: relative;
+    z-index: 39;
+}
+
+nav .navmenu.prendio + * {
+    visibility: visible;
+    transition: all .2s ease, visibility .1s;
+    transition-delay: all 0, visibility .2s;
+}
+
+nav .navmenu::after {
+    pointer-events: none;
+    content: "";
+    position: fixed;
+    z-index: 38;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../imgs/reticulaxmin.svg), rgb(225, 174, 65);
+    background-size: 100px, cover;
+    background-repeat: repeat, no-repeat;
+    color: rgba(0, 0, 0, 0.5);
+    mix-blend-mode: color-burn;
+    animation: hue 15s infinite alternate;
+}
+
+.navmenu.prendio {
+    height: 80vw;
+    width: 80vw;
+    padding: 5rem 5rem 25rem 5rem;
+}
+
+.navmenu ul li {
+    list-style: none;
+}
+
+.navmenu > ul.anchor li:last-of-type,
+.navmenu > ul.contacto li:last-of-type{
+    margin-bottom: 40px;
+}
+
+.navmenu ul.anchor {
+    grid-area: nav;
+    justify-self: stretch;
+    align-self: end;
+}    
+
+
+
+/* ESTILOS PARA LOS LINKS DE LA MAV */
+.navmenu > ul li a {
+    font-family: 'Archivo', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--negro);
+    display: block;
+}
+
+.navmenu ul li {
+    transition: all ease 0.1s;
+    overflow-x: visible;
+}
+
+.navmenu ul li:hover {
+    transition: all ease 0.1s;
+    letter-spacing: -2px;
+}
+
+
+/* -------------------  DEFINICIÓN  ---------------------- */
+
+section#definicion {
+
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+section#definicion p:nth-last-of-type(1) {
+    margin: 0 30vw;
+}
+
+section#definicion .definicion {
+    height: 0vh;
+    width: 500px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    transition: height 1s;
+    transition-delay: 0.4s;
+    position: relative;
+    z-index: 3;
+}
+
+.definicion ol {
+    padding-left: 50px;
+}
+
+/* NECESARIO POR EL FLEX */
+.definicion dfn {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.definicion strong {
+    font-weight: 800;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+#definicion .jarra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pilota {
+    min-width: 70px;
+    min-height: 70px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: aliceblue;
+    filter: blur(60px);
+    mix-blend-mode: color;
+    transition: all 3s ease;
+}
+
+
+/* -------------------  /DEFINICIÓN  ---------------------- */
+
+/*--///////////////// HAGO COSAS ///////////////////--*/
+
+
+section.hago {
+    align-items: unset;
+    padding: 60px;
+}
+
+section.hago h2,
+section.hago a {
+    width: auto;
+    text-decoration: none;
+    color: var(--negro);
+    text-align: left;
+    font-size: 4rem;
+    font-family: 'Roboto slab', serif;
+}
+
+section.hago a {
+    position: relative;
+}
+
+section.hago a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4rem;
+    bottom: .2rem;
+    left: -1rem;
+    /* box-shadow: 0px 0px 0px 5px var(--negro); */
+    background-color: rgb(225, 174, 65);
+    mix-blend-mode: overlay;
+    animation: hue 30s infinite alternate;
+    opacity: 0;
+    transition: width 1s ease, opacity 0.2s;
+}
+
+section.hago a:hover::before {
+    width: calc(100% + 2rem);
+    opacity: 1;
+    transition: width 0.5s ease, opacity 0.2s;
+}
+
+/*--///////////////// /HAGO COSAS ///////////////////--*/
+
+/*--///////////////// HAGO FOTOS ///////////////////--*/
+
+
+
+
+
+/*--///////////////// /HAGO FOTOS ///////////////////--*/
+
+
+
+/*--///////////////// FOOTER ///////////////////--*/
+
+footer {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    overflow: hidden;
+}
+
+footer img:nth-of-type(1) {
+    height: 40vh;
+}
+
+footer img:nth-of-type(2) {
+    height: 5vw;
+    margin-bottom: 40px;
+}
+
+footer img.trip {
+    position: absolute;
+    bottom: 0;
+    right: 15vw;
+    height: 100%;
+    z-index: 0;
+    animation: hue 120s infinite alternate;
+}
+
+
+footer p {
+    font-weight: 600;
+}
+
+
+
+
