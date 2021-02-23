@@ -463,14 +463,20 @@ section#definicion .definicion {
 }
 
 .pilota {
+    position: absolute;
+    top: 0;
+    left: 0;
     min-width: 70px;
     min-height: 70px;
-    position: absolute;
     border-radius: 50%;
     background-color: aliceblue;
     filter: blur(60px);
     mix-blend-mode: color;
     transition: all 3s ease;
+}
+
+.pilota.alt{
+    mix-blend-mode: hard-light;
 }
 
 

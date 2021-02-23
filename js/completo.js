@@ -269,6 +269,11 @@ function Inicio(cuantas, seccion, estado) {
     }
     else if(modo == "agujero"){
         setInterval(vida, 1000, modo, 40, 0);
+
+        for (i = 2; i < 5; ++i) {
+            jarra[i].classList.toggle("alt");
+        };
+
     }
 
         
@@ -282,7 +287,7 @@ function Inicio(cuantas, seccion, estado) {
                 bolita.style.filter = `blur(${numero(100,5) + "px"})`;
                 bolita.style.transform = `translate(${numero(movimiento,0, "X") + "vw"},${numero(movimiento,0, "x") + "vh"})`;
             };
-            console.log("lesgou")
+            
         }
         else if(modo == "agujero"){
             for (var bolita of jarra) {
@@ -292,20 +297,13 @@ function Inicio(cuantas, seccion, estado) {
                 bolita.style.backgroundColor = randomColor();
                 bolita.style.filter = `blur(${numero(80,5) + "px"})`;
             };
-            console.log("lesgou")
+
+
+
+            
         }
 
     };
-        // function vida(tamaño, movimiento) {
-        //     for (i = 0; i < jarra[seccion]; ++i) {
-        //         var tamano = numero(tamaño, 1) + "vw";
-        //         jarra[seccion].childNodes.style.height = `${tamano}`;
-        //         jarra[seccion].childNodes.style.width = `${tamano}`;
-        //         jarra[seccion].childNodes.style.backgroundColor = randomColor();
-        //         jarra[seccion].childNodes.style.filter = `blur(${numero(100,5) + "px"})`;
-        //         jarra[seccion].childNodes.style.transform = `translate(${numero(movimiento,0) + "vw"},${numero(movimiento,0) + "vh"})`;
-        //     };
-        // }
     
 };
 
