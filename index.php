@@ -1,33 +1,34 @@
+<?php
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <title>VÍCTOR ✌🏻</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Mi portfolio en internet much wow" />
-    <meta name="keywords" content="viktor victor víctor balbin portfolio porfolio" />
+    <meta name="Description" content="un portfolio más pero no." />
+    <meta name="keywords" content="viktor victor balbin portfolio" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,100&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wght@400;700&family=PT+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,100&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" type="text/css" href="css/rumba.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
   </head>
   <!--///////////////// SEPARADOR ///////////////////-->
   <!--///////////////// /SEPARADOR ///////////////////-->
   <body>
 
 
-   
     <button id="nav-btn">
-      <img src="imgs/eguzkia-lento.gif" alt="MENÚ" id="solete"/>
+      <img src="imgs/eguzkia-lento.gif" alt="MEN" id="solete"/>
     </button>
     <nav id="nav">
+      <div class="navmenu">
         <ul class="anchor">
           <li class="deg-izq"><a href="#footer">HOLA ITEM 1</a></li>
           <li class="deg-cent"><a href="#footer">HOLA ITEM 2</a></li>
@@ -35,71 +36,62 @@
         </ul>
 
         <ul class="contacto">
-          <li class="tlf"><a href="#footer"><span>688</span>82<span>49</span>38<span></span></a></li>
-          <li class="mail"><a href="#footer">itme!@vivikthor.eus</a></li>
+          <li><a href="#footer">HOLA ITEM 2</a></li>
+          <li><a href="#footer">HOLA ITEM 2</a></li>
           <li>
             <ul class="rrss">
-              <li class="issuu">
+              <li title="Subo mis diseños editoriales a ISSUU">
                 <a href="https://issuu.com/vivikthor" target="_blank"
-                  ><img src="imgs/rrss/issuu.svg" alt="ISSUU" title="Ver mis diseños editoriales en ISSUU"></a>
+                  ><i class="fas fa-bullseye dalecolor"></i
+                ></a>
               </li>
-              <li class="instagram">
-                <a href="https://www.instagram.com/vivikthor" target="_blank" title="Ver mis fotos y dibujos en Instagram"><img src="imgs/rrss/instagram.svg" alt="Instagram"></a>
+              <li title="Ver mi Instagram">
+                <a href="https://www.instagram.com/vivikthor" target="_blank"
+                  ><i class="fab fa-instagram dalecolor"></i
+                ></a>
               </li>
-              <li class="twitch">
+              <li title="A veces trabajo en directo en Twitch">
                 <a href="https://www.twitch.tv/vivikthor" target="_blank"
-                  ><img src="imgs/rrss/twitch.svg" alt="Twitch"title="Ver cómo trabajo y me entretengo en Twitch"></a>
+                  ><i class="fab fa-twitch dalecolor"></i
+                ></a>
               </li>
-              <li class="spotify">
+              <li title="Ver mi Spotify">
                 <a
                   href="https://open.spotify.com/user/vivivikthor"
-                  target="_blank" title="Ver mis playlist en Spotify"><img src="imgs/rrss/spotify.svg" alt="Spotify"></a>
+                  target="_blank"
+                  ><i class="fab fa-spotify dalecolor"></i
+                ></a>
               </li>
-              <li class="linkedin">
+              <li title="Ver mi LinkedIn">
                 <a
                   href="https://www.linkedin.com/in/v%C3%ADctor-balb%C3%ADn-espejo-a6401a1b1/"
-                  target="_blank" title="Ver mi LinkedIn"
-                  ><img src="imgs/rrss/linkedin.svg" alt="LinkedIn">
-                </a>
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
               </li>
             </ul>
           </li>
         </ul>
+      </div>
     </nav>
+
 
 
     <main>
     <!--///////////////// HEADER ///////////////////-->
 
     <header id="header" class="jarra agujero">
-
-      <button id="contempla">
-        CONTEMPLACIÓN
-      </button>
-
-
-      <div id="idiomas">
-        <button id="langEUS">
-          EUS
-        </button>
-        <button id="langENG">
-          ENG
-        </button>
-        <button id="langESP">
-          ESP
-        </button>
-        <span class="current"></span>
-      </div>
       <article>
         <h2 id="nombre"><span>v</span>íc<span>tor</span></h2>
         <p>
           <a href="#definicion">persona creativa<span class="asterisco">*</span></a>
         </p>
-        <p><small>(DISEÑADOR GRÁFICO Y WEB)</small></p>
+        <p><small></small></p>
       </article>
 
       <img src="imgs/victor-balbin.png" alt="" title="" />
 
+      <button class="switch-lang">Cambiar idioma</button>
 
 
     
@@ -120,6 +112,7 @@
           </li>
         </ol>
       </span>
+      <span class="jarra"></span>
     </section>
 
     <!--///////////////// /INTRO ///////////////////-->
@@ -127,6 +120,10 @@
     <!--///////////////// HAGO COSAS ///////////////////-->
 
     <section class="hago">
+      <p>
+        ¡Hola! Me llamo Víctor (Balbín Espejo) y tengo 21. Vivo en Irún, al lado
+        de Francia. Me gustan los piratas, el espacio, las cosas místicas.
+      </p>
       <h2><a href="#">A VECES DIBUJO</a></h2>
       <h2><a href="#">MAQUETO TODO</a></h2>
       <h2><a href="#">DISEÑO MUCHA WEB</a></h2>
@@ -137,17 +134,49 @@
   </main>
     <!--///////////////// FOOTER ///////////////////-->
     <footer id="footer">
-
-      <button id="nav-btn">
-        <img src="imgs/eguzkia-lento.gif" alt="MENÚ" id="solete"/>
-        volver arriba
-      </button>
+      <img src="imgs/islaweb.svg" title="yo" alt="un dibujo de mí" />
 
       <img
         src="imgs/victor-balbin.gif"
         title="Víctor Balbín Espejo"
         alt="Víctor Balbín"
-        class="gif"
+      />
+
+      <ul class="rrss">
+        <li title="Subo mis diseños editoriales a ISSUU">
+          <a href="https://issuu.com/vivikthor" target="_blank"
+            ><i class="fas fa-bullseye dalecolor"></i
+          ></a>
+        </li>
+        <li title="Ver mi Instagram">
+          <a href="https://www.instagram.com/vivikthor" target="_blank"
+            ><i class="fab fa-instagram dalecolor"></i
+          ></a>
+        </li>
+        <li title="A veces trabajo en directo en Twitch">
+          <a href="https://www.twitch.tv/vivikthor" target="_blank"
+            ><i class="fab fa-twitch dalecolor"></i
+          ></a>
+        </li>
+        <li title="Ver mi Spotify">
+          <a href="https://open.spotify.com/user/vivivikthor" target="_blank"
+            ><i class="fab fa-spotify dalecolor"></i
+          ></a>
+        </li>
+        <li title="Ver mi LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/v%C3%ADctor-balb%C3%ADn-espejo-a6401a1b1/"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </li>
+      </ul>
+
+      <img
+        src="imgs/victor-balbin-tripwus.svg"
+        title="u can't trip with us &#60;3"
+        alt="un dibujo de un alien hermafrodita haciendo el símbolo de paz"
+        class="trip"
       />
 
       <p>Soy una persona registrada. 2021.</p>
@@ -159,3 +188,6 @@
     <script src="js/completo.js"></script>
   </body>
 </html>
+
+
+?>

@@ -6,9 +6,6 @@
 
 
 /*--///////////////// FUENTES ///////////////////--
-font-family: 'Abril Fatface', cursive;
-font-family: 'Archivo', sans-serif;
-font-family: 'PT Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Mono', monospace;
 --///////////////// /FUENTES ///////////////////--*/
@@ -26,18 +23,22 @@ font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: 'PT Sans', sans-serif;
+    
 }
+
+/* *:focus {
+    outline: solid 10px #9faeff;
+    animation: hue 1s infinite alternate;
+    filter: saturate(1);
+} */
+
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    background-image: var(--ruido-blanco);
-    background-size: 170px;
-    background-repeat: repeat;
-    background-position: bottom;
-    background-attachment: fixed;
+    min-height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 section {
@@ -53,6 +54,21 @@ section {
 }
 
 
+button {
+    padding: 7px 15px;
+    cursor: pointer;
+    background: none;
+    border: 2px solid var(--negro);
+    border-radius: 50em;
+    font-size: .8rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+button:active{
+    background-color:var(--negro);
+    color: var(--roto);
+}
+
 
 @keyframes hue {
     from {
@@ -64,7 +80,25 @@ section {
     }
 }
 
+@keyframes anti-hue {
+    from {
+        filter: hue-rotate(0);
+    }
 
+    to {
+        filter: hue-rotate(180deg);
+    }
+}
+
+main {
+    z-index: 1;
+    padding-bottom: 40vh;
+    background-image: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
 
 section {
     display: flex;
@@ -96,47 +130,27 @@ ul.rrss li {
     transition: all .2s ease;
 }
 
-ul.rrss li:hover {
+ul.rrss a:hover, ul.rrss a:focus{
     transform: scale(1.3) rotate(-5deg) translateY(-5px);
     filter: brightness(1.3);
+    transition: transform .2s;
+    filter: invert(1);
 }
-
-ul.rrss li:hover i {
-    transition: .3s;
-}
-
-
-ul.rrss li:hover i.fa-bullseye {
-    color: #f26f61;
-}
-
-ul.rrss li:hover i.fa-instagram {
-    color: #fa3470;
-}
-
-ul.rrss li:hover i.fa-twitch {
-    color: #9147ff;
-}
-
-ul.rrss li:hover i.fa-spotify {
-    color: #1ed760;
-}
-
-ul.rrss li:hover i.fa-linkedin-in {
-    color: #0077b5;
-}
-
 
 ul.rrss li a {
-    margin: 0 10px;
     display: block;
     color: var(--negro);
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
-ul.rrss li a i {
+ul.rrss li a img {
     display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
 }
 
 /* -------  /RRSS UL  ------- */
@@ -146,7 +160,7 @@ ul.rrss li a i {
 /* ------------------- HEADER  ---------------------- */
 
 
-header {
+#header {
     width: 100%;
     height: 200vh;
     position: relative;
@@ -160,10 +174,11 @@ header {
     background-repeat: repeat;
     background-position: bottom;
     background-attachment: fixed;
+z-index: 1;
 }
 
 
-header article {
+#header article {
     width: 700px;
     text-align: center;
     font-size: 4rem;
@@ -176,37 +191,39 @@ header article {
     z-index: 1;
 }
 
-header article h2 {
+#header article *:not(small) {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#header h2 {
     font-weight: 400;
     position: relative;
 }
 
 
-header article p a {
+#header a {
     cursor: help;
     color: var(--negro);
     text-decoration: none;
     position: relative;
-    z-index: 4;
 }
 
 
-header article p {
+#header p {
     transition: all ease 0.3s;
     font-size: 1.8rem;
 }
 
-header article p:nth-of-type(2) {
+#header p:nth-of-type(2) {
     text-transform: uppercase;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace !important;
     font-size: 1rem;
 }
 
 
 
 /* EL ASTERISCO BONITO */
-header article a span {
-    font-family: 'Abril Fat', serifs;
+.asterisco {
     font-weight: 800;
 }
 
@@ -232,7 +249,7 @@ header img {
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: sticky;
+    position: fixed;
     width: 18rem;
     height: 9rem;
     object-fit: contain;
@@ -245,104 +262,204 @@ header img {
 
 /* PILOTAK*/
 
-header .pilota {
+
+.agujero .pilota {
     top: 50vh !important;
     left: 50% !important;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: color-burn;
+}
+
+header#header.agujero .pilota {
     mix-blend-mode: color;
 }
 
-
-
-
-
-
-
-
-/* EL SOL*/
-
-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 7vh;
-    overflow: hidden;
-
-    z-index: 90;
+.hyper .pilota {
+    mix-blend-mode: difference;
 }
 
-img#solete {
-    cursor: pointer;
+
+#contempla {
+    position: absolute;
+    left: 6vw;
+    top: 90vh;
+    z-index: 4;
+    transition: .2s;
+
+    perspective: 400px;
+}
+
+#contempla.zen {
+    opacity: .1;
+}
+
+#contempla:hover{
+    opacity: 1;
+}
+
+.zen {
+    opacity: 0;
+    transition: .2s ease;
+}
+
+#idiomas {
+    position: relative;
+    position: absolute;
+    right: 6vw;
+    top: 6vh;
+    z-index: 6;
+    transition: opacity .2s;
+}
+
+#idiomas button {
+    border: none;
+    text-decoration: underline;
+}
+
+#idiomas .current {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    border: 2px solid var(--negro);
+    border-radius: 50rem;
+    top: 0;
+    right: 0;
+    transition: .2s;
+}
+
+/* //----------------//NAVEGACIÓN//----------------// */
+/* EL SOL*/
+
+#nav {
+    z-index: 5;
+    position: fixed;
+    left: 50%;  bottom: -60vh;
+    width: 0rem;    height: 0rem;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    background: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 1fr 165px 1fr;
+    grid-template-rows: 50vh auto;
+    grid-template-areas:
+    "contacto . nav"
+    "contacto . nav";
+    transition: all 0.3s ease;
+    opacity: 0.94;
+    overflow: hidden;
+}
+
+#nav-btn {
     position: fixed;
     left: 50%;
     bottom: -2.4rem;
     transform: translate(-50%, 0);
-    z-index: 40;
+    z-index: 99;
+    background: none;
+    border: none;
+    transition: 0.2s ease;
+}
+
+#nav-btn:focus{
+    outline: none;
+}
+
+#solete {
     width: 5rem;
     height: 5rem;
     object-fit: contain;
     transition: 0.2s ease;
 }
 
-img#solete.activo {
+#nav-btn.activo {
     transform: translate(-50%, -4rem);
 }
 
-img#solete.escondido {
+/* PARA CUANDO LLEGA AL FOOTER */
+#nav-btn.escondido {
     transform: translate(-50%, 4rem);
 }
 
-nav .navmenu {
-    position: fixed;
-    z-index: 39;
-    left: 50%;
-    bottom: -60vh;
-    transform: translate(-50%, 0);
-    border-radius: 50%;
-    height: 0rem;
-    width: 0rem;
-    background: var(--ruido-blanco);
-    background-size: 170px;
-    background-repeat: repeat;
-    transition: all 0.3s ease;
-    opacity: 0.94;
-    overflow: hidden;
 
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50vh auto;
-    grid-template-areas:
-        "contacto . nav"
-        "contacto . nav";
+#nav.on {
+    height: 80vw;
+    width: 80vw;
+    padding: 5rem 0;
+    padding-bottom: 33%;
 }
 
-.navmenu ul.contacto {
-    grid-area: contacto;
-    justify-self: stretch;
-    align-self: end;
-}
-
-nav .navmenu + * {
+#nav>ul {
     visibility: hidden;
     transition: all .2s ease, visibility .1s;
-    transition-delay:all 0, visibility .2s;
+    transition-delay: all 0, visibility .2s;
     position: relative;
-    z-index: 39;
 }
 
-nav .navmenu.prendio + * {
+#nav.on>ul {
     visibility: visible;
     transition: all .2s ease, visibility .1s;
     transition-delay: all 0, visibility .2s;
 }
 
-nav .navmenu::after {
+#nav ul li {
+    list-style: none;
+    height: 2.7rem;
+}
+
+#nav a {
+    text-decoration: none;
+    color: var(--negro);
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: letter-spacing .2s, transform .2s;
+}
+
+#nav a:focus, #nav a:hover {
+    letter-spacing: 2px;
+    text-decoration: underline;
+    transition: letter-spacing .2s, transform .2s;
+}
+
+#nav ul.anchor {
+    grid-area: nav;
+    justify-self: stretch;
+    align-self: end;
+}
+
+#nav ul.contacto {
+    grid-area: contacto;
+    justify-self: stretch;
+    align-self: end;
+    text-align: right;
+}
+
+#nav ul.rrss {
+    justify-content: flex-end;
+}
+
+#nav ul.rrss li {
+    margin: 0 10px;
+}
+
+#nav .tlf{
+    transform: translate(-60px, -72px) rotate(12deg) scale(1.3);
+}
+
+#nav li.tlf span{
+    margin: 0 10px;
+}
+
+#nav .mail{
+    transform: translate(0px, -25px) rotate(6deg);
+}
+
+#nav::after {
     pointer-events: none;
     content: "";
     position: fixed;
-    z-index: 38;
     left: 0;
     bottom: 0;
     height: 100%;
@@ -355,49 +472,6 @@ nav .navmenu::after {
     animation: hue 15s infinite alternate;
 }
 
-.navmenu.prendio {
-    height: 80vw;
-    width: 80vw;
-    padding: 5rem 5rem 25rem 5rem;
-}
-
-.navmenu ul li {
-    list-style: none;
-}
-
-.navmenu > ul.anchor li:last-of-type,
-.navmenu > ul.contacto li:last-of-type{
-    margin-bottom: 40px;
-}
-
-.navmenu ul.anchor {
-    grid-area: nav;
-    justify-self: stretch;
-    align-self: end;
-}    
-
-
-
-/* ESTILOS PARA LOS LINKS DE LA MAV */
-.navmenu > ul li a {
-    font-family: 'Archivo', sans-serif;
-    font-family: 'PT Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
-    text-decoration: none;
-    color: var(--negro);
-    display: block;
-}
-
-.navmenu ul li {
-    transition: all ease 0.1s;
-    overflow-x: visible;
-}
-
-.navmenu ul li:hover {
-    transition: all ease 0.1s;
-    letter-spacing: -2px;
-}
 
 
 /* -------------------  DEFINICIÓN  ---------------------- */
@@ -405,7 +479,6 @@ nav .navmenu::after {
 section#definicion {
 
     position: relative;
-    height: 100vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -463,20 +536,22 @@ section#definicion .definicion {
 }
 
 .pilota {
-    position: absolute;
-    top: 0;
-    left: 0;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
     min-width: 70px;
     min-height: 70px;
+    position: absolute;
     border-radius: 50%;
     background-color: aliceblue;
     filter: blur(60px);
     mix-blend-mode: color;
     transition: all 3s ease;
-}
-
-.pilota.alt{
-    mix-blend-mode: hard-light;
 }
 
 
@@ -541,39 +616,22 @@ section.hago a:hover::before {
 
 footer {
     position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     padding: 15px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
 }
 
-footer img:nth-of-type(1) {
-    height: 40vh;
-}
 
-footer img:nth-of-type(2) {
+footer img.gif {
     height: 5vw;
     margin-bottom: 40px;
 }
-
-footer img.trip {
-    position: absolute;
-    bottom: 0;
-    right: 15vw;
-    height: 100%;
-    z-index: 0;
-    animation: hue 120s infinite alternate;
-}
-
-
-footer p {
-    font-weight: 600;
-}
-
-
-
 
