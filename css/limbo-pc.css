@@ -1,0 +1,17 @@
+/* /// ---------------------------------------------------- /// */
+@media only screen and (max-width: 10px) {
+
+#nav {
+    border-radius: 50% 50% 0 0;
+}
+#nav.on {
+        width: 100vw;
+        height: 100vw;
+        bottom: 0;
+        padding: 5rem 3rem 25rem 3rem;
+    }
+}
+
+#header{
+    grid-template-columns: min-content 1fr;
+}

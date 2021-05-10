@@ -1,0 +1,36 @@
+/* ------------------- HEADER  ---------------------- */
+
+
+header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+   gap: 1rem;
+   grid-auto-rows: 1fr;
+   grid-template-columns: repeat(5,1fr) ;
+    overflow: hidden;
+    background-image: var(--ruido-blanco);
+    background-size: 170px;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    z-index: 2;
+}
+
+
+
+/* PILOTAK*/
+
+
+.pilota {
+    user-select: none;
+    pointer-events: none;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    filter: blur(30px);
+    mix-blend-mode: color;
+    transition: all 0s ease;
+}

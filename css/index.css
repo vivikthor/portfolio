@@ -1,0 +1,376 @@
+/* ------------------- HEADER  ---------------------- */
+
+
+#header article {
+    width: 700px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--negro);
+    display: grid;
+    grid-template-rows: 6rem 2rem 1rem;
+}
+
+#header article *:not(small) {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#header h1 {
+    font-weight: 400;
+    position: relative;
+}
+
+#header p {
+    transition: all ease 0.3s;
+    font-size: 1.8rem;
+}
+
+#header p:nth-of-type(2) {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: .8rem;
+}
+
+
+
+
+/* EL ASTERISCO BONITO */
+.asterisco {
+    cursor: help;
+    font-weight: 900;
+    position: relative;
+}
+
+/* VICTOR */
+#nombre {
+    transition: all 0.6s ease;
+}
+
+#nombre span {
+    letter-spacing: -0.65rem;
+}
+
+#nombre span:nth-of-type(2) {
+    letter-spacing: 0.2rem;
+}
+
+
+
+
+#contempla {
+    position: absolute;
+    left: 3vw;
+    top: 90vh;
+    z-index: 4;
+    transition: .2s;
+    perspective: 400px;
+}
+
+#contempla.zen {
+    opacity: .1;
+}
+
+#contempla:hover {
+    opacity: 1;
+}
+
+.zen {
+    opacity: 0;
+    transition: .2s ease;
+}
+
+/* -------------------  DEFINICIÓN  ---------------------- */
+
+section#definicion {
+    padding: 40vh 40vw;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+}
+
+#definicion dfn {
+    width: 100%;
+    text-align: left;
+    font-size: 2rem;
+}
+
+#definicion ol {
+    padding-left: 1rem;
+}
+
+#definicion strong {
+    text-align: left;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* -------------------  /DEFINICIÓN  ---------------------- */
+
+/*--///////////////// HAGO COSAS ///////////////////--*/
+
+
+#hago {
+    padding: 25vh 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hago .haikus {
+    max-width: 50vw;
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: .6fr min-content;
+    grid-template-rows: 1fr;
+    gap: 5vw;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: visible;
+    transition: transform .1s;
+}
+
+#hago .hago-img {
+    min-height: 70vh;
+    border-radius: 50rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+#hago img {
+    z-index: 1;
+    object-fit: fill;
+    image-rendering: pixelated;
+}
+
+#hago .hago-txt {
+    width: min-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#hago small {
+    font-style: italic;
+    margin-bottom: -10px;
+}
+
+#hago h2 {
+    font-size: 3rem;
+    white-space: pre;
+    margin-bottom: 1.5rem;
+    transform: translateZ(25px);
+}
+
+#hago p {
+    margin-bottom: 2rem;
+    width: 80%;
+}
+
+#hago svg {
+    transform: rotate(45deg);
+
+}
+
+#hago [class*="btn"]{
+    transform: translateZ(50px);
+}
+
+#hago a:hover svg,
+#hago a:focus svg {
+    animation: diag-derecha 3s ease infinite reverse;
+}
+
+@keyframes diag-derecha {
+    0% {
+        transform: translateX(0px) rotate(45deg);
+    }
+
+    50% {
+        transform: translateX(7px) rotate(90deg);
+    }
+
+    100% {
+        filter: translateX(0px) rotate(45deg);
+    }
+}
+
+
+
+/*--///////////////// /HAGO COSAS ///////////////////--*/
+
+/*--///////////////// SOBRE ///////////////////--*/
+
+#sobre {
+    padding: 10vh 3vw 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas:
+        "linkin txt"
+        "foto foto";
+    gap: 5rem;
+    position: relative;
+}
+
+#sobre .txt {
+    grid-area: txt;
+    max-width: 30vw;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+#sobre .linkin {
+    grid-area: linkin;
+    display: flex;
+    flex-flow: column;
+    place-self: baseline;
+}
+
+#sobre article {
+    flex: 1;
+    margin: 1rem 0;
+    border: 2px var(--negro);
+    border-radius: 0 0 1rem 0;
+    border-style: none solid solid none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr max-content;
+    transition: height 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#sobre article .top {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#sobre article .btm {
+    padding: 0;
+    width: 100%;
+    max-height: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: max-height 1s ease, padding 1s ease;
+}
+
+#sobre .ico {
+    width: 4rem;
+    place-self: center;
+    stroke-width: 1px;
+}
+
+#sobre .linkin [class*="btn"] {
+    margin: 0 1rem;
+    flex: 1;
+}
+
+#sobre .top p {
+    flex: 1;
+}
+
+#sobre .linkin [class*="btn"] svg {
+    transform: rotate(90deg);
+
+}
+
+#sobre .linkin [class*="btn"]:hover svg,
+#sobre .linkin [class*="btn"]:focus svg {
+    animation: derecha 3s infinite ease reverse;
+}
+
+#sobre article img {
+    object-fit: contain;
+    width: calc(100% - 8rem);
+    margin: 0 auto;
+}
+
+
+#sobre article:hover .ico{
+    animation: svg-draw 15s ease-in-out 1s infinite reverse;
+}
+
+#sobre article:hover .btm {
+    padding: 1rem !important;
+    max-height: 45vh !important;
+    transition: max-height 1s ease, padding 1s ease !important;
+}
+
+
+
+/* 
+
+#sobre .alien {
+    pointer-events: none;
+    position: absolute;
+    right: -15rem;
+    top: 0;
+    width: 15rem;
+    transition: right .8s ease;
+}
+
+@keyframes tilt {
+    from{
+        transform: rotate(-14deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
+} */
+
+
+#sobre .mifoto {
+    grid-area: foto;
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    cursor: pointer;
+    transition: height 1s ease;
+}
+
+#sobre .mifoto:before,
+#sobre .mifoto:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    background-image: url("../imgs/yo-victor-16bt.png");
+    background-repeat: space;
+    background-position: center;
+    background-size: 100%;
+    animation: x-loop 20s infinite linear;
+    transition: background-size 1s ease;
+}
+
+#sobre .mifoto:after {
+    right: 100%;
+}
+
+/*--//// /ONCLICK ////--*/
+
+#sobre .mifoto.woo {
+    height: 50vh;
+    transition: height 1s ease;
+}
+
+#sobre .mifoto.woo:before,
+#sobre .mifoto.woo:after {
+    background-size: 65%;
+    transition: background-size 1s ease;
+}
+
+
+/*--///////////////// /SOBRE ///////////////////--*/
+
+
+

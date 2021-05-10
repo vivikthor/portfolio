@@ -1,0 +1,165 @@
+#header {
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#header::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+#header h1 {
+    font-family: auto;
+    font-size: 11vw;
+    font-weight: 400;
+    line-height: 5rem;
+    position: relative;
+    color: var(--negro);
+    /* filter: drop-shadow(0 0 2px var(--negro)); */
+}
+
+#header h1:hover {
+    z-index: -1;
+}
+
+#header .pill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50rem;
+    width: 13vw;
+    height: 80vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+#header .pill:hover {
+    z-index: 1;
+}
+
+#header .bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 6vw);
+    border-radius: 0;
+    z-index: -2;
+    height: 200vh;
+    transform: translate(-50%);
+    overflow: hidden;
+    transition: border-radius .5s ease;
+}
+
+#header .bg img {
+    object-position: 0 top;
+    height: 100%;
+    width: 100vw;
+}
+
+#header img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+
+
+
+
+
+#cositas {
+    padding: 3vw;
+    display: grid;
+    gap: 10vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+}
+
+#cositas > div {
+    overflow: hidden;
+}
+
+#cositas .redes ul{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+    "spotify ."
+    "instagram twitch"
+    ". linkedin";
+}
+
+#cositas .redes a:hover, #cositas .redes a:focus {
+    filter: invert(1);
+    backdrop-filter: invert(0);
+    border-color: white;
+}
+
+#cositas .redes a {
+    padding: 1rem;
+    border: 2px solid var(--negro);
+    display: block !important;
+    color: var(--negro);
+    text-decoration: none;
+}
+
+#cositas .redes div {
+
+    display: flex;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 800;
+    align-items: center;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+#cositas .redes div img{
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+#cositas .redes div svg {
+    height: 1rem;
+    margin-left: 1rem;
+    transform: rotate(45deg);
+}
+
+#cositas .redes .spotify {
+    grid-area:spotify;
+    margin-bottom: -2px;
+}
+#cositas .redes .instagram {
+    grid-area:instagram;
+}
+#cositas .redes .twitch {
+    grid-area:twitch;
+    margin: 0 0 -2px -2px;
+}
+#cositas .redes .linkedin {
+    grid-area:linkedin;
+}
+
+
+
+#cositas span {
+    display: flex;
+}
+
+#cositas .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+#cositas .info img {
+    height: 27vh;
+    margin-right: 2rem;
+    image-rendering:-webkit-optimize-contrast;
+}
