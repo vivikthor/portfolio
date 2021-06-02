@@ -1,103 +1,119 @@
 #header {
-    height: 100vh;
-    overflow-y: scroll;
+    height: 150vh;
     scrollbar-width: none;
+    justify-content: initial;
+}
+
+#header .wrap {
+    height: 105vh;
+    display: flex;
+}
+
+#header img {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13vw;
+    height: 80vh;
+    min-width: 13vw;
+    min-height: 80vh;
+    border-radius: 50rem;
+    max-width: calc(100% - 6vw);
+    object-fit: cover;
+    z-index: -1;
+    transition: all 1s ease;
+}
+
+#header img.unfold {
+    width: calc(100% - 6vw);
+    max-height: 200vh;
+    height: 200vh;
+    transition: all 1s ease;
 }
 
 #header::-webkit-scrollbar {
     display: none;
-  }
-
-
+}
 
 #header h1 {
+    align-self: center;
     font-family: auto;
     font-size: 11vw;
     font-weight: 400;
     line-height: 5rem;
     position: relative;
     color: var(--negro);
-    /* filter: drop-shadow(0 0 2px var(--negro)); */
 }
-
-#header h1:hover {
-    z-index: -1;
-}
-
-#header .pill {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50rem;
-    width: 13vw;
-    height: 80vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-}
-
-#header .pill:hover {
-    z-index: 1;
-}
-
-#header .bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: calc(100% - 6vw);
-    border-radius: 0;
-    z-index: -2;
-    height: 200vh;
-    transform: translate(-50%);
-    overflow: hidden;
-    transition: border-radius .5s ease;
-}
-
-#header .bg img {
-    object-position: 0 top;
-    height: 100%;
-    width: 100vw;
-}
-
-#header img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-}
-
-
-
 
 
 
 #cositas {
     padding: 3vw;
     display: grid;
-    gap: 10vw;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 1fr;
+    grid-auto-rows: min-content;
+    column-gap: 3vw;
+    grid-template-areas: 
+    "hola info1"
+    "btn btn"
+    "tarjetas info2";
 }
 
-#cositas > div {
+#cositas .hola{
+    padding-top: 20vh;
+    grid-area: hola;
+    text-align: center;
+    font-size: 15vw;
+}
+
+#cositas .hola p:nth-of-type(1){
+    font-size: 15vw;
+    margin-bottom: 5rem;
+}
+
+#cositas .texto{
+    grid-area: info1;
+}
+
+#cositas .texto em {
+    font-weight: 900;
+    cursor: help;
+}
+
+#cositas .cv-btn {
+    grid-area: btn;
+    margin: 10vh auto; 
+}
+
+
+#cositas>div {
+    grid-area: tarjetas;
     overflow: hidden;
 }
 
-#cositas .redes ul{
+#cositas .redes ul {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
     grid-template-areas:
-    "spotify ."
-    "instagram twitch"
-    ". linkedin";
+        "spotify ."
+        "instagram twitch"
+        ". linkedin";
+
 }
 
-#cositas .redes a:hover, #cositas .redes a:focus {
-    filter: invert(1);
+#cositas .redes a:hover,
+#cositas .redes a:focus {
     backdrop-filter: invert(0);
+    filter: invert(1);
     border-color: white;
+}
+
+#cositas .redes a:hover svg,
+#cositas .redes a:focus svg {
+    animation: derecha 3s infinite ease reverse;
 }
 
 #cositas .redes a {
@@ -105,10 +121,12 @@
     border: 2px solid var(--negro);
     display: block !important;
     color: var(--negro);
+
     text-decoration: none;
 }
 
 #cositas .redes div {
+
 
     display: flex;
     font-family: 'Roboto Mono', monospace;
@@ -118,7 +136,12 @@
     margin-bottom: 1rem;
 }
 
-#cositas .redes div img{
+#cositas .redes p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+#cositas .redes div img {
     height: 2rem;
     margin-right: 1rem;
 }
@@ -130,27 +153,46 @@
 }
 
 #cositas .redes .spotify {
-    grid-area:spotify;
+    grid-area: spotify;
     margin-bottom: -2px;
 }
+
 #cositas .redes .instagram {
-    grid-area:instagram;
+    grid-area: instagram;
 }
+
 #cositas .redes .twitch {
-    grid-area:twitch;
+    grid-area: twitch;
     margin: 0 0 -2px -2px;
 }
+
 #cositas .redes .linkedin {
-    grid-area:linkedin;
+    grid-area: linkedin;
 }
 
+/* #cositas .spotify  a:hover,
+#cositas .spotify a:focus {
+    backdrop-filter: invert(0) brightness(0.7) sepia(.6) hue-rotate(20deg);
+} 
+*/
 
 
-#cositas span {
+
+
+
+
+
+
+#cositas .fotos {
     display: flex;
+    justify-content: center;
+    height: 27vh;
+    margin-right: 2rem;
+    position: relative;
 }
 
 #cositas .info {
+    grid-area: info2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,7 +201,21 @@
 }
 
 #cositas .info img {
-    height: 27vh;
-    margin-right: 2rem;
-    image-rendering:-webkit-optimize-contrast;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+#cositas .info .hiru {
+    position: absolute;
+    height: 33%;
+    bottom: 0;
+    right: -.5rem;
+}
+
+
+
+
+
+#bolas {
+    padding: 5vw;
+    overflow: hidden;
 }

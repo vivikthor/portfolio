@@ -1,3 +1,10 @@
+var body = document.body,
+    html = document.documentElement;
+
+var docheight = document.body.scrollHeight;
+
+
+
 let seccionHeader = document.getElementById("header");
 let seccionFooter = document.getElementById("footer");
 
@@ -13,6 +20,13 @@ let fechaLetr = document.querySelector(".fecha");
 let fechaNum = document.querySelector(".fecha-num");
 
 
+let footerico = document.querySelector("#footer .ico");
+
+let footerCentral = document.querySelector("#footer .central")
+let footerMailBtnWrap = document.querySelector("#footer .butn-wrapper")
+
+
+
 
 let txtRandom = document.querySelectorAll(".txt-random");
 
@@ -23,6 +37,11 @@ let frases = [
     "Naughty boy would do anything for money",
     "𓅮𓆈𓃦"
 ];
+
+
+let emojispersona = [
+    "🧘", "👨‍🚀", "🧜🏻‍♂️", "🧚", "🧙", "🧛🏻‍♀️", "🧞", "👨‍🎨"
+]
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // "No te fíes del horóscopo",
@@ -33,7 +52,7 @@ let frases = [
 /////////////////////////////////////////////////////////////
 
 // alllinks.forEach(function (i) {
-    
+
 //     if (i.getAttribute('href') == "#" && i.classList.contains(".atras-btn") == false) {
 //             i.href="limbo.html";
 //     }
@@ -173,3 +192,60 @@ atrasBtn.forEach(function (i) {
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
+
+let emojispersonaInterval = setInterval(function () {
+    footerico.innerHTML = emojispersona[Math.floor(Math.random() * emojispersona.length)];
+}, 5000)
+
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+
+
+footerCentral.addEventListener("mouseover", function (e) {
+    // const mailBtn = document.querySelector("#footer .mail-btn");
+    // const mailBtnCont = document.querySelector("#footer .mail-btn .cont");
+
+    // var rect = mailBtn.getBoundingClientRect();
+    // var x = Math.floor(e.clientX - ((rect.left) + rect.width / 2));
+    // var y = Math.floor(e.clientY - (rect.top + rect.height / 2));
+
+
+
+    //     mailBtn.style.transform = `translate(${x/7}px, ${y/7}px)`
+    //     mailBtnCont.style.transform = `translate(${x/10}px, ${y/10}px)`
+
+
+
+
+    // let string = ` top: ${50% - y}px;
+    //                left: ${50% - x}px;`
+
+    // mailBtn.style = string;
+
+
+    // console.log(x, y)
+
+})
+
+
+
+footerCentral.addEventListener("mouseout", function (e) {
+    // const mailBtn = document.querySelector("#footer .mail-btn");
+    // const mailBtnCont = document.querySelector("#footer .mail-btn .cont");
+
+
+    //     mailBtn.style.transform = `translate(-50%,-50%)`
+    //     mailBtnCont.style.transform = `translate(-50%,0%)`
+
+    // string = ` top: 50%;
+    //  left: 50%;
+    //  transform: (-50%,-50%);`;
+
+    // mailBtn.style = string
+    // mailBtnCont.style = string;
+
+
+})

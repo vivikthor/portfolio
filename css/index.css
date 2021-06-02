@@ -162,8 +162,7 @@ section#definicion {
 #hago h2 {
     font-size: 3rem;
     white-space: pre;
-    margin-bottom: 1.5rem;
-    transform: translateZ(25px);
+    margin-bottom: 1rem;
 }
 
 #hago p {
@@ -220,8 +219,6 @@ section#definicion {
 #sobre .txt {
     grid-area: txt;
     max-width: 30vw;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
 }
 
 #sobre .linkin {

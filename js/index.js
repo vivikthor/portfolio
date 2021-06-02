@@ -178,7 +178,6 @@ sobreBtn.forEach(function (e, index) {
 window.addEventListener('scroll', function () {
 
     
-    
     let SobreCoord = window.scrollY - seccionSobre.offsetTop;
     let HeaderCoord = window.scrollY - seccionHeader.offsetTop;
     
@@ -222,15 +221,8 @@ a();
 
 
 
-
-
 //////////////////////////////////////////     
 
 mifoto.onclick = function () {
     mifoto.classList.toggle("woo");
 }
-
-
-
-
-

@@ -8,7 +8,6 @@
     <meta name="keywords" content="viktor victor balbin portfolio" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wght@400;700&family=PT+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,100&display=swap"
@@ -17,48 +16,102 @@
 
     <link rel="stylesheet" type="text/css" href="css/rumba.css" />
     <link rel="stylesheet" type="text/css" href="css/prueba.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1200px)" href="css/limbo-pc.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (max-width: 1200px)"
+      href="css/limbo-pc.css"
+    />
   </head>
   <!--///////////////// SEPARADOR ///////////////////-->
   <!--///////////////// /SEPARADOR ///////////////////-->
   <body>
+    <header>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+      <span class="pilota"></span>
+    </header>
 
-<header>
+    <section class="jarra ente agujero" data-cuantas="3" data-min="1" data-max="5"></section>
 
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-<span class="pilota"></span>
-
-</header>
+    <section class="orbita">
+      <svg viewBox="0 0 619.25 145">
+        <circle class="cls-1" cx="293.35" cy="72.5" r="72" />
+        <circle class="luna" cx="586.2" cy="72.5" r="32.55" />
+        <ellipse class="elipse" cx="293.35" cy="72.5" rx="72" ry="21.85" />
+        <ellipse
+          class="elipse svgorbita"
+          cx="293.35"
+          cy="72.5"
+          rx="292.85"
+          ry="56"
+        />
+      </svg>
+    </section>
 
     <!--///////////////// FOOTER ///////////////////-->
 
-
     <!--///////////////// /FOOTER ///////////////////-->
 
+    <script src="js/pilotak.js"></script>
+    <script>
+      let color = [
+        "ff0000",
+        "ff6f00",
+        "ffea00",
+        "c5ff00",
+        "b9ff66",
+        "00ff03",
+        "b3e4ff",
+        "4dfaff",
+        "003bfd",
+        "8100ff",
+        "ff00f0",
+      ];
+      let pilotak = document.querySelectorAll(".pilota");
 
-<script>
- let color = ["ff0000", "ff6f00", "ffea00", "c5ff00", "b9ff66", "00ff03", "b3e4ff", "4dfaff", "003bfd", "8100ff", "ff00f0"];
-let pilotak = document.querySelectorAll(".pilota");
+      for (var i = 0; i < pilotak.length; i++) {
+        pilotak[i].style.backgroundColor = `#${color[i]}`;
+      }
 
+      let luna = document.querySelector(".luna");
+      let orbita = document.querySelector(".svgorbita");
 
-for (var i = 0; i < pilotak.length; i++) {
-        pilotak[i].style.backgroundColor=`#${color[i]}`;
-    };
+      let centrX = orbita.getBoundingClientRect().width / 2;
+      let centrY = orbita.getBoundingClientRect().height / 2;
+      let lunaX = luna.getAttribute("cx");
+      let lunaY = luna.getAttribute("cy");
 
-</script>
+      function rotate(cx, cy, x, y, angle) {
+        var radians = (Math.PI / 180) * angle,
+          cos = Math.cos(radians),
+          sin = Math.sin(radians),
+          nx = cos * (x - cx) + sin * (y - cy) + cx,
+          ny = cos * (y - cy) - sin * (x - cx) + cy;
+        return [nx, ny];
+      }
 
+      setInterval(function () {
+        rotate(centrX, centrY, lunaX, lunaY, 0);
+        var valores = rotate(centrX, centrY, lunaX, lunaY, 0);
+        
+        console.log(lunaX, lunaY, valores)
+        luna.setAttribute("cx", valores[0]);
+        luna.setAttribute("cy", valores[1]);
+
+      }, 1000);
+    </script>
   </body>
 </html>

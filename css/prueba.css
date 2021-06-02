@@ -19,11 +19,55 @@ header {
 }
 
 
+.orbita{
+    padding: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orbita svg {
+    width: 50vh;
+}
+
+.elipse {
+    stroke-dasharray: 10;
+    animation: mask 10s infinite linear;
+    stroke-dashoffset: 100;
+}
+
+.svgorbita{
+        stroke-dasharray: 10;
+        animation: mask 20s infinite linear;
+        stroke-dashoffset: 100;
+}
+
+@keyframes mask {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.luna {
+    transition: all 2s;
+}
+
+.ente {
+    display: block;
+    padding: 4rem;
+    position: relative;
+    height: 100vh;
+}
+
+
+
+
 
 /* PILOTAK*/
 
 
 .pilota {
+    position: static;
     user-select: none;
     pointer-events: none;
     min-width: 80px;
@@ -34,3 +78,5 @@ header {
     mix-blend-mode: color;
     transition: all 0s ease;
 }
+
+
