@@ -9,10 +9,7 @@
     color: var(--negro);
     display: grid;
     grid-template-rows: 6rem 2rem 1rem;
-}
-
-#header article *:not(small) {
-    font-family: "Times New Roman", Times, serif !important;
+    position: relative;
 }
 
 #header h1 {
@@ -36,7 +33,8 @@
 /* EL ASTERISCO BONITO */
 .asterisco {
     cursor: help;
-    font-weight: 900;
+    font-size: 1rem !important;
+    margin-right: 2rem;
     position: relative;
 }
 
@@ -45,15 +43,37 @@
     transition: all 0.6s ease;
 }
 
-#nombre span {
+#nombre > span {
     letter-spacing: -0.65rem;
 }
 
-#nombre span:nth-of-type(2) {
+#nombre > span:nth-of-type(2) {
     letter-spacing: 0.2rem;
 }
 
+.asterisco span {
+    font-family: 'Times New Roman', Times, serif !important;
+}
 
+#header img {
+    position: absolute;
+    mix-blend-mode: difference;
+    width: 10rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+#header .solete {
+    width: 5rem;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+#header .lapiz {
+    bottom: -1rem;
+    filter: invert();
+    right: 2rem;
+}
 
 
 #contempla {
@@ -77,130 +97,6 @@
     opacity: 0;
     transition: .2s ease;
 }
-
-/* -------------------  DEFINICIÓN  ---------------------- */
-
-section#definicion {
-    padding: 40vh 40vw;
-    position: relative;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    text-align: left;
-}
-
-#definicion dfn {
-    width: 100%;
-    text-align: left;
-    font-size: 2rem;
-}
-
-#definicion ol {
-    padding-left: 1rem;
-}
-
-#definicion strong {
-    text-align: left;
-    font-weight: 900;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-/* -------------------  /DEFINICIÓN  ---------------------- */
-
-/*--///////////////// HAGO COSAS ///////////////////--*/
-
-
-#hago {
-    padding: 25vh 3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#hago .haikus {
-    max-width: 50vw;
-    min-height: fit-content;
-    display: grid;
-    grid-template-columns: .6fr min-content;
-    grid-template-rows: 1fr;
-    gap: 5vw;
-    position: relative;
-    transform-style: preserve-3d;
-    overflow: visible;
-    transition: transform .1s;
-}
-
-#hago .hago-img {
-    min-height: 70vh;
-    border-radius: 50rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-#hago img {
-    z-index: 1;
-    object-fit: fill;
-    image-rendering: pixelated;
-}
-
-#hago .hago-txt {
-    width: min-content;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-}
-
-#hago small {
-    font-style: italic;
-    margin-bottom: -10px;
-}
-
-#hago h2 {
-    font-size: 3rem;
-    white-space: pre;
-    margin-bottom: 1rem;
-}
-
-#hago p {
-    margin-bottom: 2rem;
-    width: 80%;
-}
-
-#hago svg {
-    transform: rotate(45deg);
-
-}
-
-#hago [class*="btn"]{
-    transform: translateZ(50px);
-}
-
-#hago a:hover svg,
-#hago a:focus svg {
-    animation: diag-derecha 3s ease infinite reverse;
-}
-
-@keyframes diag-derecha {
-    0% {
-        transform: translateX(0px) rotate(45deg);
-    }
-
-    50% {
-        transform: translateX(7px) rotate(90deg);
-    }
-
-    100% {
-        filter: translateX(0px) rotate(45deg);
-    }
-}
-
-
-
-/*--///////////////// /HAGO COSAS ///////////////////--*/
 
 /*--///////////////// SOBRE ///////////////////--*/
 

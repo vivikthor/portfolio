@@ -17,6 +17,15 @@ font-family: 'Roboto Mono', monospace;
      --ruido-negro: url(../imgs/ruido-negro-7.gif);
  }
 
+ @font-face {
+    font-family: 'd-dindin';
+    src: url('d-din-bold-webfont.woff2') format('woff2'),
+         url('d-din-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
  * {
      box-sizing: border-box;
      margin: 0;
@@ -98,6 +107,13 @@ font-family: 'Roboto Mono', monospace;
      padding: 7px 15px;
      width: fit-content;
      height: fit-content;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+    font-family: 'd-dindin';
+        text-transform: uppercase;
+        letter-spacing: -7px;
+        transform: scale(.9, 1.1);
  }
 
  p {
